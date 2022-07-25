@@ -35,5 +35,7 @@ Now we can reach our site via:
 
     https://template.example.org
 
---- Open Source Hosting ---
- https://www.hostsharing.net
+Open Source Hosting
+-------------------
+
+https://www.hostsharing.net
