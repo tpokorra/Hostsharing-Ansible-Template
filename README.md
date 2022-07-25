@@ -1,7 +1,7 @@
 Hostsharing-Ansible-Template
 ============================
 
-This Ansible playbook will install the latest Template release on a server from www.hostsharing.net.
+This Ansible playbook will install the latest [Template](https://template.org) release on a server from www.hostsharing.net.
 
 To use these modules we have to create a file named ".hsadmin.properties" in the home directory of the package admins. Into that file we have to insert the packagename and password of the package admin. 
 
