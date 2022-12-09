@@ -54,6 +54,19 @@
   ## configuration
   ##################################
 
+  - name: upload the password for the postgresql database
+    become: yes
+    template:
+      src: "templates/pgpass"
+      dest: "/home/pacs/{{pac}}/users/{{user}}/.pgpass"
+      mode: "700"
+  - name: upload the password for the mysql database
+    become: yes
+    template:
+      src: "templates/my.cnf"
+      dest: "/home/pacs/{{pac}}/users/{{user}}/.my.cnf"
+      mode: "700"
+
   # TODO
 
   ######################
