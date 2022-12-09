@@ -44,6 +44,9 @@
   - name: Install ruby
     import_tasks: tasks/hs_ruby.yml
 
+  - name: Install composer
+    import_tasks: tasks/hs_composer.yml
+
   ##################################
   ## install template
   ##################################
@@ -80,6 +83,20 @@
   ########################
 
   # TODO
+  - name: drop htdocs-ssl
+    become: yes
+    become_user: "{{pac}}-{{user}}"
+    file:
+       path: "/home/pacs/{{pac}}/users/{{user}}/doms/{{domain}}/htdocs-ssl"
+       state: absent
+  - name: create symbolic link for htdocs-ssl
+    become: yes
+    become_user: "{{pac}}-{{user}}"
+    file:
+      src: "/home/pacs/{{pac}}/users/{{user}}/template/public"
+      dest: "/home/pacs/{{pac}}/users/{{user}}/doms/{{domain}}/htdocs-ssl"
+      state: link
+
 
   ####################################
   ## install cron jobs
