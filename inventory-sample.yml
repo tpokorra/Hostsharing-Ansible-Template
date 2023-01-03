@@ -7,6 +7,11 @@ template:
       domain: template.example.org
       user: template
       password: testpassw0rd_changeme
+
+      db_name: template
+      db_user: template
+      db_password: testpassw0rd2_changeme
+
       redispassword: testpassw0rd_changeme
 
       redisport: 11111
