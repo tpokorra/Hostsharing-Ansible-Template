@@ -25,4 +25,4 @@ template:
       # see https://www.ruby-lang.org/en/downloads/releases/
       rubyversion: 2.7.2
       # see https://getcomposer.org/download/
-      composer_version: 2.4.4
+      composer_version: 2.5.4
