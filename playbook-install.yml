@@ -8,9 +8,6 @@
     ansible_remote_tmp: ~/.ansible/tmp
 
   tasks:
-  - name: Create user, domain and database
-    import_tasks: tasks/hs_basis.yml
-
   #################################
   ## create directories
   #################################
