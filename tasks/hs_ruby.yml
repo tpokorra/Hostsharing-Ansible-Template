@@ -28,6 +28,8 @@
   shell: |
      . ~/.profile
      rbenv install {{rubyversion}} || exit -1
+     rbenv rehash || exit -1
+     rbenv global {{rubyversion}} || exit -1
   args:
       executable: /bin/bash
       chdir: "/home/pacs/{{pac}}/users/{{user}}/"
