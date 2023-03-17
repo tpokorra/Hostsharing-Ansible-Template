@@ -12,7 +12,7 @@
   shell: |
       touch /home/pacs/{{pac}}/users/{{user}}/.profile
       chmod a+x /home/pacs/{{pac}}/users/{{user}}/.profile
-      /home/pacs/{{pac}}/users/{{user}}/install-nvm.sh
+      /home/pacs/{{pac}}/users/{{user}}/install-nvm.sh  || exit -1
   args:
       executable: /bin/bash
       chdir: "/home/pacs/{{pac}}/users/{{user}}/"
@@ -28,8 +28,8 @@
   become_user: "{{pac}}-{{user}}"
   shell: |
       . ~/.profile
-      nvm install {{noderelease}}
-      nvm alias default {{noderelease}}
+      nvm install {{noderelease}} || exit -1
+      nvm alias default {{noderelease}} || exit -1
   args:
       executable: /bin/bash
       chdir: "/home/pacs/{{pac}}/users/{{user}}/"
@@ -39,9 +39,9 @@
   become_user: "{{pac}}-{{user}}"
   shell: |
       . ~/.profile
-      npm install -g yarn
+      npm install -g yarn  || exit -1
   args:
       executable: /bin/bash
       chdir: "/home/pacs/{{pac}}/users/{{user}}/"
-      creates: "/home/pacs/{{pac}}/users/{{user}}/.nvm/versions/node/{{nodeversion}}/bin/TODO"
+      creates: "/home/pacs/{{pac}}/users/{{user}}/.nvm/versions/node/{{nodeversion}}/bin/yarn"
   
